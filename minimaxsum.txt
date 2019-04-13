@@ -1,0 +1,30 @@
+#!/bin/python3
+#Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. 
+#Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+import math
+import os
+import random
+import re
+import sys
+
+def miniMaxSum(arr):
+    min=0
+    max=0
+    t=0
+    s=0
+    sum=0
+    for i in range(0,len(arr)):
+        sum+=arr[i]    
+        if arr[i]<arr[t]:
+            t=i
+    for j in range(0,len(arr)):
+        if arr[j]>arr[s]:
+            s=j
+    max=sum-arr[t]
+    min=sum-arr[s]
+    print(min,max)            
+    return 0
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
