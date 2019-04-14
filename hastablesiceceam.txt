@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import math
+import os
+#check for a sum by adding the two numbers in the string.
+#if found then print index
+import random
+import re
+import sys
+
+
+def whatFlavors(cost, money):
+    map = []
+    for pos in range(len(cost)):
+        f1 = cost[pos]
+        f2 = money - f1
+        if f2 in map:
+            # print(f2)
+            print(cost.index(f2) + 1, pos + 1)
+        else:
+            map.append(f1)  
+        #print(map)
+
+if __name__ == '__main__':
+    t = int(input())
+
+    for t_itr in range(t):
+        money = int(input())
+
+        n = int(input())
+
+        cost = list(map(int, input().rstrip().split()))
+
+        whatFlavors(cost, money)
